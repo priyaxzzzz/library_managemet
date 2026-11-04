@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageTurn Library - Books</title>
+    <link rel="stylesheet" href="books.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">📚 PageTurn</div>
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a class="nav-item" href="dashboard.html">🏠 Dashboard</a>
+            <a class="nav-item active" href="books.html">📚 Books</a>
+            <a class="nav-item" href="members.html">👥 Members</a>
+            <a class="nav-item" href="issue-book.html">📤 Issue Book</a>
+            <a class="nav-item" href="return-book.html">📥 Return Book</a>
+            <a class="nav-item" href="reports.html">📊 Reports</a>
+            <a href= "about.html" class="nav-item">📊 about</a>
+          
+        </nav>
+
+        <div class="logout-area">
+            <a class="nav-item" href="login.html" onclick="localStorage.removeItem('username')">🚪 Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="small-title">Library Management System</p>
+                <h2>Books</h2>
+            </div>
+
+            <div class="profile">
+                👤
+                <div>
+                    <strong id="adminName">Library Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-card">
+
+            <div class="books-header">
+                <div>
+                    <h1>📚 Books</h1>
+                    <p>Add and manage your library books.</p>
+                </div>
+
+                <button class="add-book-btn" onclick="showAddBookForm()">+ Add Book</button>
+            </div>
+
+            <div id="addBookForm" class="add-book-form">
+                <h2 id="formTitle">➕ Add New Book</h2>
+                <p class="form-description">Enter the book details below.</p>
+
+                <form id="bookForm">
+                    <input type="hidden" id="editIndex">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookId">Book ID</label>
+                            <input id="bookId" placeholder="B001" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bookName">Book Name</label>
+                            <input id="bookName" placeholder="Enter book name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input id="author" placeholder="Enter author name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select Category</option>
+                                <option>Technology</option>
+                                <option>Programming</option>
+                                <option>Fiction</option>
+                                <option>Science</option>
+                                <option>History</option>
+                                <option>Education</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="publisher">Publisher</label>
+                            <input id="publisher" placeholder="Publisher" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input id="year" type="number" min="1000" max="2100" placeholder="2026" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input id="quantity" type="number" min="1" placeholder="5" required>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button class="save-btn" id="saveButton" type="submit">💾 Add Book</button>
+                        <button class="cancel-btn" type="button" onclick="cancelBookForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="book-list">
+                <h2>📖 All Books</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Book Name</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Publisher</th>
+                                <th>Year</th>
+                                <th>Quantity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="booksTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeViewModal()">&times;</span>
+            <h2>📖 Book Details</h2>
+            <div id="bookDetails"></div>
+        </div>
+    </div>
+
+    <script src="books.js"></script>
+</body>
+</html>

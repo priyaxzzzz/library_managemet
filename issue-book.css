@@ -1,0 +1,279 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f6efe4;
+    color: #30251f;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: #3b2f2f;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.menu-title {
+    color: #c9b8a7;
+    font-size: 12px;
+    margin: 0 0 15px 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 13px 12px;
+    border-radius: 8px;
+    display: block;
+    font-size: 14px;
+}
+
+.nav-item:hover {
+    background: #594541;
+}
+
+.nav-item.active {
+    background: #a66a2c;
+}
+
+.logout {
+    margin-top: auto;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #76675c;
+}
+
+.admin-info {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #0000000d;
+}
+
+.form-card,
+.table-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px #0000000d;
+}
+
+.form-card h2,
+.table-card h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #76675c;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8c9b9;
+    border-radius: 7px;
+    font-size: 14px;
+    background: #fffdf9;
+    color: #30251f;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #a66a2c;
+}
+
+.form-group small {
+    margin-top: 7px;
+    color: #76675c;
+    font-size: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary-btn {
+    background: #a66a2c;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #89531f;
+}
+
+.secondary-btn {
+    background: #e8ded2;
+    color: #30251f;
+}
+
+.secondary-btn:hover {
+    background: #d8c9b9;
+}
+
+#message {
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#message.success {
+    color: #237443;
+}
+
+#message.error {
+    color: #c0392b;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    min-width: 750px;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee3d8;
+    font-size: 13px;
+}
+
+th {
+    background: #f5e9da;
+    color: #5a3b25;
+}
+
+tbody tr:hover {
+    background: #fffaf4;
+}
+
+@media (max-width: 800px) {
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+        padding: 20px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logout {
+        margin-top: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .form-card,
+    .table-card {
+        padding: 18px;
+    }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageTurn Library - Members</title>
+    <link rel="stylesheet" href="members.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">📚 PageTurn</div>
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a class="nav-item" href="dashboard.html">🏠 Dashboard</a>
+            <a class="nav-item" href="books.html">📚 Books</a>
+            <a class="nav-item active" href="members.html">👥 Members</a>
+            <a class="nav-item" href="issue-book.html">📤 Issue Book</a>
+            <a class="nav-item" href="return-book.html">📥 Return Book</a>
+            <a class="nav-item" href="reports.html">📊 Reports</a>
+            <a href= "about.html" class="nav-item">📊 about</a>
+            
+        </nav>
+
+        <div class="logout-area">
+            <a class="nav-item" href="login.html" onclick="localStorage.removeItem('username')">🚪 Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="small-title">Library Management System</p>
+                <h2>Members</h2>
+            </div>
+
+            <div class="profile">
+                👤
+                <div>
+                    <strong id="adminName">Library Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-card">
+
+            <div class="members-header">
+                <div>
+                    <h1>👥 Members</h1>
+                    <p>Add and manage your library members.</p>
+                </div>
+
+                <button class="add-member-btn" onclick="showMemberForm()">+ Add Member</button>
+            </div>
+
+            <div id="memberFormSection" class="member-form-section">
+                <h2 id="formTitle">➕ Add New Member</h2>
+                <p class="form-description">Enter the member details below.</p>
+
+                <form id="memberForm">
+                    <input type="hidden" id="editIndex">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="memberId">Member ID</label>
+                            <input type="text" id="memberId" placeholder="M001" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="memberName">Member Name</label>
+                            <input type="text" id="memberName" placeholder="Enter member name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" id="department" placeholder="Enter department" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter email address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="Enter phone number" pattern="[0-9]{10}" maxlength="10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="save-btn" id="saveButton">💾 Add Member</button>
+                        <button type="button" class="cancel-btn" onclick="cancelMemberForm()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="member-list">
+                <h2>📋 All Members</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Member ID</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="membersTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="viewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeViewModal()">&times;</span>
+            <h2>👥 Member Details</h2>
+            <div id="memberDetails"></div>
+        </div>
+    </div>
+
+    <script src="members.js"></script>
+</body>
+</html>

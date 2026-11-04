@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PageTurn Library - Reports</title>
+
+    <link rel="stylesheet" href="reports.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h2>📚 PageTurn</h2>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+            <a href="books.html" class="nav-item">📚 Books</a>
+            <a href="members.html" class="nav-item">👥 Members</a>
+            <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+            <a href="return-book.html" class="nav-item">📥 Return Book</a>
+            <a href="reports.html" class="nav-item active">📊 Reports</a>
+            <a href="about.html" class="nav-item">ℹ️ About</a>
+        </nav>
+
+        <a href="login.html" class="nav-item logout" id="logoutLink">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>Library Reports</h1>
+                <p>View your library's current statistics</p>
+            </div>
+
+            <div class="admin-info">
+                👤 <span id="adminName">Admin</span>
+            </div>
+
+        </header>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div>
+                    <p>Total Books</p>
+                    <h2 id="totalBooks">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <p>Total Members</p>
+                    <h2 id="totalMembers">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div>
+                    <p>Available Books</p>
+                    <h2 id="availableBooks">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📤</div>
+                <div>
+                    <p>Issued Books</p>
+                    <h2 id="issuedBooks">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- BOOK INVENTORY -->
+
+        <section class="report-card">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>📖 Book Inventory Report</h2>
+                    <p>Current availability of every book</p>
+                </div>
+
+                <button type="button"
+                        class="refresh-btn"
+                        id="refreshReport">
+                    🔄 Refresh Report
+                </button>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Book Name</th>
+                            <th>Author</th>
+                            <th>Total Quantity</th>
+                            <th>Available Quantity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="inventoryTableBody"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- CURRENTLY ISSUED BOOKS -->
+
+        <section class="report-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>📋 Currently Issued Books</h2>
+                    <p>Books that have not yet been returned</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Member ID</th>
+                            <th>Book Name</th>
+                            <th>Book ID</th>
+                            <th>Issue Date</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="issuedTableBody"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- RETURN HISTORY -->
+
+        <section class="report-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>📥 Return History</h2>
+                    <p>Books that have already been returned</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Member ID</th>
+                            <th>Book Name</th>
+                            <th>Book ID</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="returnHistoryTableBody"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <footer class="report-footer">
+            <p id="lastUpdated"></p>
+        </footer>
+
+    </main>
+
+    <script src="reports.js"></script>
+
+</body>
+</html>

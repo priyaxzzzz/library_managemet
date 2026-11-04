@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageTurn Library Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">📚 PageTurn</div>
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html" class="nav-item active">🏠 Dashboard</a>
+            <a href="books.html" class="nav-item">📚 Books</a>
+            <a href="members.html" class="nav-item">👥 Members</a>
+            <a href="issue-book.html" class="nav-item">📤 Issue Book</a>
+            <a href="return-book.html" class="nav-item">📥 Return Book</a>
+            <a href="reports.html" class="nav-item">📊 Reports</a>
+            <a href= "about.html" class="nav-item">📊 about</a>
+            
+        </nav>
+
+        <div class="logout-area">
+            <a href="login.html" class="nav-item" onclick="localStorage.removeItem('username')">🚪 Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="small-title">Library Management System</p>
+                <h2>Dashboard</h2>
+            </div>
+
+            <div class="profile">
+                👤
+                <div>
+                    <strong id="adminName">Library Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome-box">
+            <div>
+                <p>Welcome back 👋</p>
+                <h1>Manage Your Library</h1>
+                <span>Manage books, members and library activities easily.</span>
+            </div>
+
+            <div class="welcome-icon">📚</div>
+        </section>
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div>
+                    <h3 id="totalBooks">0</h3>
+                    <p>Total Books</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <h3 id="totalMembers">0</h3>
+                    <p>Members</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📤</div>
+                <div>
+                    <h3 id="totalIssued">0</h3>
+                    <p>Issued Books</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📥</div>
+                <div>
+                    <h3 id="totalReturned">0</h3>
+                    <p>Returned Books</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="recent-books">
+
+            <div class="section-heading">
+                <div>
+                    <h2>📚 Recent Books</h2>
+                    <p>Recently added books</p>
+                </div>
+
+                <a class="button-link" href="books.html">View All Books →</a>
+            </div>
+
+            <div id="dashboardBooks" class="dashboard-book-list"></div>
+
+        </section>
+
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

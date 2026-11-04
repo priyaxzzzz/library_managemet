@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PageTurn Library - Issue Book</title>
+    <link rel="stylesheet" href="issue-book.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>📚 PageTurn</h2>
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html" class="nav-item">🏠 Dashboard</a>
+            <a href="books.html" class="nav-item">📚 Books</a>
+            <a href="members.html" class="nav-item">👥 Members</a>
+            <a href="issue-book.html" class="nav-item active">📤 Issue Book</a>
+            <a href="return-book.html" class="nav-item">📥 Return Book</a>
+            <a href="reports.html" class="nav-item">📊 Reports</a>
+            <a href= "about.html" class="nav-item">📊 about</a>
+            
+        </nav>
+
+        <a href="login.html" class="nav-item logout" id="logoutLink">🚪 Logout</a>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Issue Book</h1>
+                <p>Issue books to library members</p>
+            </div>
+
+            <div class="admin-info">
+                👤 <span id="adminName">Admin</span>
+            </div>
+        </header>
+
+        <section class="form-card">
+            <h2>📤 Issue a Book</h2>
+            <p class="description">
+                Select a member and an available book.
+            </p>
+
+            <form id="issueForm">
+
+                <div class="form-group">
+                    <label for="memberSelect">Member Name</label>
+                    <select id="memberSelect" required>
+                        <option value="">Select Member</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookSelect">Book Name</label>
+                    <select id="bookSelect" required>
+                        <option value="">Select Book</option>
+                    </select>
+                    <small id="bookAvailability">
+                        Select a book to check availability.
+                    </small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="issueDate">Issue Date</label>
+                        <input type="date" id="issueDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="returnDate">Return Date</label>
+                        <input type="date" id="returnDate" required>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="primary-btn">
+                        📤 Issue Book
+                    </button>
+
+                    <button type="reset" class="secondary-btn">
+                        Clear
+                    </button>
+                </div>
+
+                <p id="message" role="status" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <section class="table-card">
+            <h2>📋 Issued Books</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member Name</th>
+                            <th>Member ID</th>
+                            <th>Book Name</th>
+                            <th>Book ID</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="issuedTableBody">
+                        <tr>
+                            <td colspan="7">No books issued yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="issue-book.js"></script>
+</body>
+</html>

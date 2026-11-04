@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About - PageTurn Library</title>
+
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <h2 class="logo">📚 PageTurn</h2>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <nav>
+            <a href="dashboard.html" class="nav-item">
+                🏠 Dashboard
+            </a>
+
+            <a href="books.html" class="nav-item">
+                📚 Books
+            </a>
+
+            <a href="members.html" class="nav-item">
+                👥 Members
+            </a>
+
+            <a href="issue-book.html" class="nav-item">
+                📤 Issue Book
+            </a>
+
+            <a href="return-book.html" class="nav-item">
+                📥 Return Book
+            </a>
+
+            <a href="reports.html" class="nav-item">
+                📊 Reports
+            </a>
+
+            <a href="about.html" class="nav-item active">
+                ℹ️ About
+            </a>
+        </nav>
+
+        <a href="login.html" class="nav-item logout"
+           id="logoutLink">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>About Our Digital Library</h1>
+                <p>A Simple and Efficient Library Management System</p>
+            </div>
+
+            <div class="admin-info">
+                👤 <span id="adminName">Admin</span>
+            </div>
+        </header>
+
+
+        <!-- ABOUT CARD -->
+        <section class="about-container">
+
+            <div class="about-header">
+
+                <div class="about-icon">📚</div>
+
+                <h2>About Our Digital Library</h2>
+
+                <p>
+                    A Simple and Efficient Library Management System
+                </p>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <h2>About the Project</h2>
+
+                <p>
+                    The Digital Library Management System is a
+                    web-based application developed to manage
+                    library activities easily. It helps the
+                    administrator maintain book details, member
+                    information, book issuing, book returns,
+                    and library reports.
+                </p>
+
+
+                <h2>Technologies Used</h2>
+
+                <div class="technology-list">
+                    <div class="technology">HTML</div>
+                    <div class="technology">CSS</div>
+                    <div class="technology">JavaScript</div>
+                    <div class="technology">localStorage</div>
+                </div>
+
+
+                <h2>Project Objectives</h2>
+
+                <ul>
+                    <li>To manage book and member records.</li>
+                    <li>To record book issuing and returning.</li>
+                    <li>To update available book quantities.</li>
+                    <li>To generate library reports.</li>
+                    <li>To reduce manual record-keeping work.</li>
+                </ul>
+
+
+                <div class="about-footer">
+                    <p>Digital Library Management System</p>
+                    <span>Developed as a College Mini Project</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+        // Display logged-in username
+        const username = localStorage.getItem("username");
+
+        if (username) {
+            document.getElementById("adminName").textContent = username;
+        }
+
+        // Logout
+        document.getElementById("logoutLink").addEventListener(
+            "click",
+            function () {
+                localStorage.removeItem("username");
+            }
+        );
+    </script>
+
+</body>
+</html>
